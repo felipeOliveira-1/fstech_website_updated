@@ -1,0 +1,75 @@
+= Instruções para Implementação das Atualizações no Site da FSTech
+FSTech Arquitetura de Software | Versão 1.0
+2025-04-30
+
+== Visão Geral
+
+Este documento consolida as tarefas de atualização do site da FSTech com foco no novo posicionamento estratégico da empresa: agentes de IA aplicados ao cotidiano dos negócios. As alterações devem ser aplicadas respeitando a identidade visual atual, mas reforçando o impacto da automação prática e mensurável.
+
+ClickUp ID do Projeto: *901311297594*
+
+== 🔥 Tarefas Urgentes
+
+=== 1. Atualizar CTA Principal do Site
+* **Substituir texto do CTA principal:**
+  De: `Agende sua consulta`
+  Para: `Descubra como agentes de IA podem dobrar sua produtividade — agende sua sessão diagnóstica.`
+* **Texto do botão:** `Quero meu diagnóstico gratuito`
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89ka63
+
+=== 2. Adicionar Mini-Portfólio com Resultados Visíveis
+* Criar bloco de "Resultados comprovados com IA", contendo pelo menos os seguintes cases:
+** `Cliente X:` redução de 20h/mês com atendimento IA
+** `Cliente Y:` +32% em conversões com CRM inteligente
+* Layout sugerido: cards ou ícones com título + breve descrição.
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89ka6v
+
+== ⚠️ Tarefas com Alta Prioridade
+
+=== 3. Criar Seção: "O que Podemos Automatizar para Você"
+* Inserir nova seção explicando escopos de automação oferecidos:
+** Atendimento inteligente (chatbots com IA)
+** CRM com inteligência de contexto
+** Geração de relatórios automatizados
+** Onboarding de novos clientes e colaboradores
+** Agentes de follow-up e lembretes automáticos
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89ka5u
+
+=== 4. Inserir Reforço Estratégico no Conteúdo
+* Incorporar frases com tom consultivo e prático, como:
+** `Criamos agentes inteligentes que executam tarefas enquanto você foca no que importa.`
+* Termos obrigatórios a serem usados ao longo do texto:
+** `co-pilot`, `automação`, `IA operacional`
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89ka4u
+
+=== 5. Atualizar Headline e Subtítulo do Site
+* **Headline sugerida:** `Consultoria Tech + Agentes de IA personalizados para seu negócio.`
+* **Subtítulo:** `Aplicamos IA prática para eliminar tarefas operacionais e acelerar resultados reais.`
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89ka3v
+
+== 🧩 Tarefa Macro: Evolução Estratégica do Site
+
+=== 6. Evolução do Site FSTech
+* Refatorar layout e conteúdo com foco em:
+** Reforço da identidade em IA prática e resultados de negócio
+** Prova social e credibilidade (clientes e resultados)
+** Clareza no portfólio de serviços automatizáveis
+* Subtarefas incluídas:
+** Atualização de títulos e subtítulos
+** Nova seção “O que podemos automatizar para você”
+** Adição de mini-portfólio de resultados
+** Otimização SEO (uso de palavras-chave como: IA aplicada, produtividade, agentes inteligentes)
+** Revisão completa de CTAs para refletir novo tom
+* **Tarefa ClickUp:** https://app.clickup.com/t/86a89jhk7
+
+== Considerações Finais
+
+* Manter consistência visual com identidade atual (cores, tipografia, ícones).
+* Garantir compatibilidade com dispositivos móveis.
+* Todas as alterações devem ser aprovadas após staging.
+* Em caso de dúvidas, consultar o time de produto ou marketing estratégico.
+
+== Responsável Técnico
+* Nome: [A ser preenchido]
+* Deadline sugerido: [Definir junto ao time]
+
