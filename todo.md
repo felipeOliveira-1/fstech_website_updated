@@ -8,5 +8,5 @@
 - [x] 6. Corrigir imagens na página de clientes (clientes.html)
 - [x] 7. Configurar formulário de contato (contato.html)
 - [x] 8. Verificar funcionalidades do website
-- [ ] 9. Criar repositório GitHub
-- [ ] 10. Fazer deploy do website
+- [x] 9. Criar repositório GitHub
+- [x] 10. Fazer deploy do website
