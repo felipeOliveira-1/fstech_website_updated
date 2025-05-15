@@ -10,20 +10,27 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Conheça a FStech: nossa missão, valores e equipe dedicada a simplificar a tecnologia para empreendedores e pequenas empresas.">
 </head>
-<body>
+<body style="background: linear-gradient(180deg, #0D0D0D 0%, #000000 100%) fixed; color: #fff;">
     <!-- Header -->
     <header>
         <img src="images/logo.png" alt="FStech Logo" class="logo">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="servicos.html">Serviços</a></li>
                 <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="sobre.html" class="active">Sobre</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="https://blog.fstech.digital/">Blog</a></li>
             </ul>
         </nav>
-        <button class="cta-button" onclick="window.location.href='contato.html'">Agendar Consulta</button>
+        <button
+  class="cta-button"
+  onclick="window.location.href='https://fstech.digital/contato.html';"
+>
+  Quero meu diagnóstico gratuito
+</button>
+
         <button class="mobile-menu-toggle">☰</button>
     </header>
 
@@ -35,20 +42,38 @@
             <li><a href="clientes.html">Clientes</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="contato.html">Contato</a></li>
+            <li><a href="https://blog.fstech.digital/">Blog</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Sobre Nós</h1>
-        <h2>Conheça a FStech e nossa missão de simplificar a tecnologia</h2>
+    <section class="hero hero-tech-animated">
+        <div class="tech-particles"></div>
+        <div class="grid-overlay"></div>
+        <div class="tech-3d-animation">
+            <div class="cube cube-1"></div>
+            <div class="cube cube-2"></div>
+            <div class="cube cube-3"></div>
+            <div class="cube cube-4"></div>
+            <div class="cube cube-5"></div>
+            <div class="cube cube-6"></div>
+            <div class="tech-circle tech-circle-1"></div>
+            <div class="tech-circle tech-circle-2"></div>
+            <div class="tech-line tech-line-1"></div>
+            <div class="tech-line tech-line-2"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Sobre Nós</h1>
+            <h2>Conheça a FStech e nossa missão de simplificar a tecnologia</h2>
+            <div class="hero-glow"></div>
+        </div>
     </section>
 
     <!-- Sobre Nós -->
     <section class="about-section">
         <div class="mission">
-            <div class="mission-image">
-                <img src="images/about/team.png" alt="Equipe FStech">
+            <div class="mission-image image-with-effects">
+                <img src="images/about/team.png" alt="Equipe FStech" class="effect-img">
             </div>
             <div class="mission-content">
                 <h3>Nossa Missão</h3>
@@ -88,7 +113,7 @@
             <h3>Nossa Equipe</h3>
             <div class="team-grid">
 
-                <div class="team-member">
+                <div class="team-member dark-card">
                     <img src="images/eu.jpeg" alt="Felipe Silva" class="profile-pic">
                     <div class="team-info">
                         <h4>Felipe Silva</h4>
@@ -101,7 +126,7 @@
 </div>
                     </div>
                 </div>
-                <div class="team-member">
+                <div class="team-member dark-card">
                     <img src="images/foto_perfil_lucas.jpg" alt="Lucas Peruci" class="profile-pic">
                     <div class="team-info">
                         <h4>Lucas Petruci</h4>

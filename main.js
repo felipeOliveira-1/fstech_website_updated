@@ -147,41 +147,127 @@ function initCalComIntegration() {
 // Inicializa a integração com Cal.com quando o DOM estiver carregado
 document.addEventListener('DOMContentLoaded', initCalComIntegration);
 
-// Animações de scroll
-document.addEventListener('DOMContentLoaded', function() {
-    // Função para verificar se um elemento está visível na viewport
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+// Carrossel Netflix Style
+function initCarousel() {
+    const carousel = document.querySelector('.carousel-container');
+    if (!carousel) return;
+    const track = carousel.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const leftBtn = carousel.querySelector('.carousel-arrow.left');
+    const rightBtn = carousel.querySelector('.carousel-arrow.right');
+    let cardWidth = cards[0]?.offsetWidth || 320;
+    let visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
+    let position = 0;
+
+    function updateCardWidth() {
+        cardWidth = cards[0]?.offsetWidth || 320;
+        visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
     }
-    
-    // Elementos que receberão animações
-    const animatedElements = document.querySelectorAll('.service-card, .value-card, .team-member, .client-logo, .case-study, .testimonial-card, .blog-card');
-    
-    // Função para adicionar classe de animação aos elementos visíveis
-    function checkForVisibleElements() {
-        animatedElements.forEach(element => {
-            if (isElementInViewport(element) && !element.classList.contains('animated')) {
-                element.classList.add('animated');
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
+
+    function updateArrows() {
+        leftBtn.disabled = position <= 0;
+        rightBtn.disabled = position >= cards.length - visibleCards;
+        leftBtn.style.opacity = leftBtn.disabled ? 0.3 : 1;
+        rightBtn.style.opacity = rightBtn.disabled ? 0.3 : 1;
     }
-    
-    // Inicializa os elementos com opacidade 0 e transformação
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+    function scrollTo(pos) {
+        position = Math.max(0, Math.min(pos, cards.length - visibleCards));
+        track.style.transform = `translateX(-${position * (cardWidth + 30)}px)`;
+        updateArrows();
+    }
+
+    leftBtn.addEventListener('click', () => scrollTo(position - 1));
+    rightBtn.addEventListener('click', () => scrollTo(position + 1));
+
+    window.addEventListener('resize', () => {
+        updateCardWidth();
+        scrollTo(position);
     });
-    
-    // Verifica elementos visíveis no carregamento e no scroll
-    window.addEventListener('load', checkForVisibleElements);
-    window.addEventListener('scroll', checkForVisibleElements);
-});
+
+    // Drag/Swipe support
+    let startX = 0, scrollStart = 0, isDragging = false;
+    track.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX;
+        scrollStart = position;
+        track.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+        track.style.cursor = '';
+    });
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.pageX - startX;
+        if (Math.abs(dx) > cardWidth / 2) {
+            if (dx < 0 && position < cards.length - visibleCards) scrollTo(position + 1);
+            if (dx > 0 && position > 0) scrollTo(position - 1);
+            isDragging = false;
+        }
+    });
+    // Touch events
+    track.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX;
+        scrollStart = position;
+    });
+    window.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+    window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].pageX - startX;
+        if (Math.abs(dx) > cardWidth / 2) {
+            if (dx < 0 && position < cards.length - visibleCards) scrollTo(position + 1);
+            if (dx > 0 && position > 0) scrollTo(position - 1);
+            isDragging = false;
+        }
+    });
+
+    updateCardWidth();
+    scrollTo(0);
+}
+document.addEventListener('DOMContentLoaded', initCarousel);
+
+// Animações de scroll
+// Removido efeito fade/entrada para service-card e imagens
+// Caso queira manter animação para outros elementos, ajuste o seletor abaixo
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Função para verificar se um elemento está visível na viewport
+//     function isElementInViewport(el) {
+//         const rect = el.getBoundingClientRect();
+//         return (
+//             rect.top >= 0 &&
+//             rect.left >= 0 &&
+//             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+//             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//         );
+//     }
+//     
+//     // Elementos que receberão animações
+//     const animatedElements = document.querySelectorAll('.value-card, .team-member, .client-logo, .case-study, .testimonial-card, .blog-card');
+//     
+//     // Função para adicionar classe de animação aos elementos visíveis
+//     function checkForVisibleElements() {
+//         animatedElements.forEach(element => {
+//             if (isElementInViewport(element) && !element.classList.contains('animated')) {
+//                 element.classList.add('animated');
+//                 element.style.opacity = '1';
+//                 element.style.transform = 'translateY(0)';
+//             }
+//         });
+//     }
+//     
+//     // Inicializa os elementos com opacidade 0 e transformação
+//     animatedElements.forEach(element => {
+//         element.style.opacity = '0';
+//         element.style.transform = 'translateY(20px)';
+//         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+//     });
+//     
+//     // Verifica elementos visíveis no carregamento e no scroll
+//     window.addEventListener('load', checkForVisibleElements);
+//     window.addEventListener('scroll', checkForVisibleElements);
+// });
+
