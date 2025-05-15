@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FStech - Soluções Tecnológicas Simplificadas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/tech-styles.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="FStech - Simplificando a tecnologia para empreendedores individuais e pequenas empresas. Consultoria personalizada e implementação passo a passo.">
 </head>
-<body style="background: linear-gradient(180deg, #0D0D0D 0%, #000000 100%) fixed; color: #fff;">
+<body class="tech-dark-theme">
     <!-- Header -->
-    <header>
-        <img src="images/logo.png" alt="FStech Logo" class="logo">
+    <header class="tech-header">
+        <a href="index.html"><img src="images/logo.png" alt="FStech Logo" class="logo"></a>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="clientes.html">Clientes</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="https://blog.fstech.digital/">Blog</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
             </ul>
         </nav>
-        <button
-  class="cta-button"
-  onclick="window.location.href='https://fstech.digital/contato.html';"
->
-  Quero meu diagnóstico gratuito
-</button>
+        <button class="tech-button" onclick="window.location.href='contato.html';">
+            Agendar Consulta
+        </button>
 
         <button class="mobile-menu-toggle">☰</button>
     </header>
@@ -40,26 +38,30 @@
             <li><a href="clientes.html">Clientes</a></li>
             <li><a href="sobre.html">Sobre</a></li>
             <li><a href="contato.html">Contato</a></li>
-            <li><a href="https://blog.fstech.digital/">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
         </ul>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero/hero.png'); background-size: cover; background-position: center;">
-        <h1>Consultoria Tech + Agentes de IA personalizados para seu negócio.</h1>
-        <h2>Aplicamos IA prática, como um co-pilot para seu negócio, eliminando tarefas operacionais e acelerando resultados reais.</h2>
-        <div class="hero-buttons">
-    <button onclick="location.href='servicos.html'" class="cta-button">Saiba mais</button>
-    <button onclick="location.href='contato.html'" class="secondary-button">Começar agora</button>
-</div>
-
+    <section class="tech-hero">
+        <div class="hero-glow"></div>
+        <div class="tech-overlay"></div>
+        <div class="tech-hero-content">
+            <h1 class="tech-hero-title">Soluções Tecnológicas <span class="tech-text-gradient">Simplificadas</span></h1>
+            <h2 class="tech-hero-subtitle">Capacitando você a abraçar a tecnologia com confiança</h2>
+            <div class="tech-hero-buttons">
+                <button onclick="location.href='servicos.html'" class="tech-button">Saiba mais</button>
+                <button onclick="location.href='contato.html'" class="tech-button-outline">Começar agora</button>
+            </div>
+        </div>
+        <div class="tech-dot-pattern"></div>
     </section>
 
     <!-- Serviços -->
-    <section class="section">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <div class="services-grid">
-            <div class="service-card">
+    <section class="tech-section">
+        <h2 class="tech-section-title">Nossos <span class="tech-text-gradient">Serviços</span></h2>
+        <div class="tech-services-grid">
+            <div class="tech-card service-card floating">
                 <div class="service-image">
                     <img src="images/services/diagnostico.png" alt="Sessões de Diagnóstico">
                 </div>
@@ -69,7 +71,7 @@
                     <a href="servicos.html#diagnostico" class="service-link">Saiba mais</a>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="tech-card service-card floating">
                 <div class="service-image">
                     <img src="images/services/implementation.png" alt="Implementação Passo a Passo">
                 </div>
@@ -79,7 +81,7 @@
                     <a href="servicos.html#implementacao" class="service-link">Saiba mais</a>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="tech-card service-card floating">
                 <div class="service-image">
                     <img src="images/services/support.png" alt="Suporte Contínuo">
                 </div>
@@ -92,132 +94,73 @@
         </div>
     </section>
 
-    <!-- O que Podemos Automatizar -->
-    <section class="section">
-        <h2 class="section-title">O que Podemos Automatizar para Você</h2>
-        <div class="carousel-container">
-            <button class="carousel-arrow left" aria-label="Anterior">&#10094;</button>
-            <div class="carousel-track">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/botwhatsapp.png" alt="Atendimento Inteligente">
-                    </div>
-                    <div class="service-content">
-                        <h3>Atendimento Inteligente</h3>
-                        <p>Chatbots com IA para respostas rápidas e eficientes.</p>
-                        <a href="#" class="service-link">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/crm.png" alt="CRM Inteligente">
-                    </div>
-                    <div class="service-content">
-                        <h3>CRM Inteligente</h3>
-                        <p>Inteligência de contexto para otimizar seu relacionamento com clientes.</p>
-                        <a href="#" class="service-link">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/report.png" alt="Relatórios Automatizados">
-                    </div>
-                    <div class="service-content">
-                        <h3>Relatórios Automatizados</h3>
-                        <p>Geração automática de relatórios para insights rápidos.</p>
-                        <a href="#" class="service-link">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/onboarding.png" alt="Onboarding Automatizado">
-                    </div>
-                    <div class="service-content">
-                        <h3>Onboarding Automatizado</h3>
-                        <p>Agilize a integração de novos clientes e colaboradores.</p>
-                        <a href="#" class="service-link">Saiba mais</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/services/followup.png" alt="Agentes de Follow-up">
-                    </div>
-                    <div class="service-content">
-                        <h3>Agentes de Follow-up</h3>
-                        <p>Lembretes e acompanhamentos automáticos para não perder oportunidades.</p>
-                        <a href="#" class="service-link">Saiba mais</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-arrow right" aria-label="Próximo">&#10095;</button>
+    <!-- Sobre Nós Resumido -->
+    <section class="tech-dark-section">
+        <div class="tech-grid-bg"></div>
+        <div class="tech-container narrow">
+            <h2 class="tech-title-gradient">A sua parceira na <span class="tech-text-gradient">integração de soluções com IA</span></h2>
+            <p class="tech-text-lg">
+                Somos uma empresa dedicada a simplificar a tecnologia para quem mais precisa. Nosso objetivo é ajudar empreendedores individuais, pequenas empresas e pessoas que têm pouca familiaridade com tecnologia.
+            </p>
+            <a href="sobre.html" class="tech-button pulse-glow">Conheça nossa história</a>
         </div>
     </section>
 
-    <!-- Sobre Nós Resumido -->
-
-    <!-- Resultados Comprovados com IA 
-    <section class="section resultados-ia">
-        <h2 class="section-title">Resultados Comprovados com IA</h2>
-        <div class="resultados-grid">
-            <div class="resultado-card">
-                <h3>Cliente X</h3>
-                <p>Redução de 20h/mês com atendimento via agente de IA.</p>
-            </div>
-            <div class="resultado-card">
-                <h3>Cliente Y</h3>
-                <p>Aumento de +32% em conversões com CRM inteligente.</p>
-            </div>
-        </div>
-    </section>-->
-
     <!-- Call to Action -->
-    <section class="cta">
-        <h2>Pronto para simplificar sua tecnologia?</h2>
-        <p>Descubra como agentes de IA podem dobrar sua produtividade — agende sua sessão diagnóstica.</p>
-        <a href="contato.html" class="cta-button">Quero meu diagnóstico gratuito</a>
+    <section class="tech-cta-section">
+        <div class="tech-cta-content">
+            <h2 class="tech-cta-title">Pronto para <span class="tech-text-gradient">simplificar</span> sua tecnologia?</h2>
+            <p class="tech-cta-text">Agende uma consulta gratuita e descubra como podemos ajudar seu negócio a crescer com soluções tecnológicas personalizadas.</p>
+            <a href="contato.html" class="tech-button tech-button-large pulse-glow">Agendar Consulta Grátis</a>
+        </div>
+        <div class="tech-line"></div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>FStech</h3>
-                <ul>
-                    <li><a href="sobre.html">Sobre nós</a></li>
-                    <li><a href="sobre.html#equipe">Equipe</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
+    <footer class="tech-footer">
+        <div class="tech-container">
+            <div class="tech-footer-content">
+                <div class="tech-footer-column">
+                    <h3 class="tech-footer-title">FStech</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="sobre.html" class="tech-footer-link">Sobre nós</a></li>
+                        <li><a href="sobre.html#equipe" class="tech-footer-link">Equipe</a></li>
+                        <li><a href="contato.html" class="tech-footer-link">Contato</a></li>
+                        <li><a href="blog.html" class="tech-footer-link">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="tech-footer-column">
+                    <h3 class="tech-footer-title">Serviços</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="servicos.html#diagnostico" class="tech-footer-link">Sessões de Diagnóstico</a></li>
+                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação Passo a Passo</a></li>
+                        <li><a href="servicos.html#suporte" class="tech-footer-link">Suporte Contínuo</a></li>
+                    </ul>
+                </div>
+                <div class="tech-footer-column">
+                    <h3 class="tech-footer-title">Recursos</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="#" class="tech-footer-link">Guias</a></li>
+                        <li><a href="#" class="tech-footer-link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="tech-footer-column">
+                    <h3 class="tech-footer-title">Legal</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="#" class="tech-footer-link">Termos de Uso</a></li>
+                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a></li>
+                        <li><a href="#" class="tech-footer-link">Cookies</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-column">
-                <h3>Serviços</h3>
-                <ul>
-                    <li><a href="servicos.html#diagnostico">Sessões de Diagnóstico</a></li>
-                    <li><a href="servicos.html#implementacao">Implementação Passo a Passo</a></li>
-                    <li><a href="servicos.html#suporte">Suporte Contínuo</a></li>
-                </ul>
+            <div class="tech-line"></div>
+            <div class="tech-copyright">
+                <p>Copyright © 2025 FStech. Todos os direitos reservados. CNPJ 55.430.759/0001-04</p>
             </div>
-            <div class="footer-column">
-                <h3>Recursos</h3>
-                <ul>
-                    <li><a href="#">Guias</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © 2025 FStech. Todos os direitos reservados. CNPJ 55.430.759/0001-04</p>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     
     <!-- Chatbot Integration -->
     <script> window.chtlConfig = { chatbotId: "1849111777" } </script>

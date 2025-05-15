@@ -1,0 +1,321 @@
+/* Estilos do Carrossel - Clientes */
+
+.tech-carousel-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 3rem auto;
+    overflow: hidden;
+    background: rgba(15, 15, 15, 0.4);
+    border-radius: var(--radius-lg);
+    padding: 2rem 0;
+    position: relative;
+}
+
+.tech-carousel-container::before,
+.tech-carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.tech-carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
+}
+
+.tech-carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
+}
+
+.tech-carousel-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-150px * 7));
+    }
+}
+
+.tech-logo {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.15);
+}
+
+.tech-logo img {
+    max-width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.tech-logo:hover img {
+    /* Mantendo as cores originais sem filtros, apenas com aumento suave de brilho no hover */
+    filter: brightness(1.2);
+}
+
+.tech-clients-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tech-clients-intro h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.tech-clients-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Estilos para Caso de Estudo */
+.tech-case-study {
+    background: rgba(15, 15, 15, 0.6);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-case-study:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
+    border-color: rgba(20, 107, 255, 0.2);
+}
+
+.tech-case-study-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.tech-case-study-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-case-study-logo img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.tech-case-study-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.tech-case-study-title p {
+    color: var(--accent-400);
+    font-size: 0.9rem;
+}
+
+.tech-case-study-description {
+    margin-bottom: 1.5rem;
+}
+
+.tech-case-study-description p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.tech-case-features {
+    margin: 2rem 0;
+}
+
+.tech-case-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.tech-result-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(20, 107, 255, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(20, 107, 255, 0.2);
+}
+
+.tech-result-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--accent-500), var(--accent-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tech-result-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Depoimentos */
+.tech-testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-testimonial-card {
+    background: rgba(15, 15, 15, 0.6);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
+    border-color: rgba(20, 107, 255, 0.2);
+}
+
+.tech-testimonial-content {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+}
+
+.tech-testimonial-content::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--accent-500);
+    position: absolute;
+    top: -2rem;
+    left: -1rem;
+    opacity: 0.2;
+}
+
+.tech-testimonial-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.tech-testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.tech-author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    border: 2px solid var(--accent-500);
+}
+
+.tech-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tech-author-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.tech-author-info p {
+    font-size: 0.85rem;
+    color: var(--accent-400);
+}
+
+.tech-section-container {
+    margin: 4rem 0 2rem;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tech-testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-case-results {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .tech-carousel-container {
+        padding: 1.5rem 0;
+    }
+    
+    .tech-logo {
+        width: 120px;
+        padding: 1rem;
+    }
+    
+    .tech-logo img {
+        max-height: 50px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-120px * 7));
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-case-results {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-logo {
+        width: 100px;
+        padding: 0.75rem;
+    }
+    
+    .tech-logo img {
+        max-height: 40px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-100px * 7));
+        }
+    }
+}

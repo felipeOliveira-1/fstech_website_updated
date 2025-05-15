@@ -1,0 +1,282 @@
+/* TECH EFFECTS CSS 
+   Este arquivo contém efeitos visuais e animações adicionais 
+   para o design system FStech
+*/
+
+/* Animações para texto */
+.animate-text-fade {
+    opacity: 0;
+    animation: text-fade-in 0.8s ease-out forwards;
+}
+
+.animate-text-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: text-slide-up 0.8s ease-out forwards;
+}
+
+.animate-text-slide-down {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: text-slide-down 0.8s ease-out forwards;
+}
+
+.animate-text-slide-right {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: text-slide-right 0.8s ease-out forwards;
+}
+
+.animate-text-slide-left {
+    opacity: 0;
+    transform: translateX(30px);
+    animation: text-slide-left 0.8s ease-out forwards;
+}
+
+/* Delay de animação */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* Keyframes para animações de texto */
+@keyframes text-fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes text-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes text-slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes text-slide-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes text-slide-left {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efeitos visuais para cards */
+.tech-card-effect {
+    position: relative;
+    overflow: visible !important;
+}
+
+.tech-card-effect::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--color-accent-primary), transparent, var(--color-accent-secondary));
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.tech-card-effect:hover::before {
+    opacity: 1;
+    animation: rotate-gradient 4s linear infinite;
+}
+
+.tech-card-effect::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark-gradient);
+    border-radius: 18px;
+    z-index: -1;
+}
+
+/* Efeito de glow para cards */
+.tech-card-glow {
+    position: relative;
+}
+
+.tech-card-glow::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: linear-gradient(120deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(18px);
+    transform: translateY(5px) scale(0.95);
+    transition: opacity 0.4s cubic-bezier(.77,0,.18,1), transform 0.4s;
+}
+
+.tech-card-glow:hover::after {
+    opacity: 0.4;
+    transform: translateY(10px) scale(0.9);
+    animation: glow 2.5s infinite alternate;
+}
+
+/* Elementos decorativos tech */
+.tech-decorative-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(20, 107, 255, 0.15) 0%, rgba(20, 107, 255, 0) 70%);
+    filter: blur(20px);
+    z-index: -1;
+    pointer-events: none;
+    animation: pulse-slow 5s infinite alternate;
+}
+
+.tech-decorative-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(20, 107, 255, 0) 0%, rgba(0, 204, 255, 0.5) 50%, rgba(20, 107, 255, 0) 100%);
+    z-index: -1;
+    animation: expand-line 8s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* Container com efeito de partículas tech */
+.tech-particles-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-particles-container::before,
+.tech-particles-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.tech-particles-container::before {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(20, 107, 255, 0.1) 0%, rgba(20, 107, 255, 0) 70%);
+    left: -20px;
+    top: 30%;
+    filter: blur(30px);
+    animation: float 7s infinite ease-in-out alternate;
+}
+
+.tech-particles-container::after {
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.08) 0%, rgba(0, 204, 255, 0) 70%);
+    right: -20px;
+    bottom: 20%;
+    filter: blur(25px);
+    animation: float 9s infinite ease-in-out alternate-reverse;
+}
+
+/* Keyframes adicionais */
+@keyframes rotate-gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes expand-line {
+    0%, 100% {
+        transform: scaleX(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scaleX(1.5);
+        opacity: 0.7;
+    }
+}
+
+/* Fix para overflow */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.service-card.tech-card-effect {
+    overflow: visible !important;
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+.service-card.tech-card-effect:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para títulos de seção */
+.section-title.tech-animated {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.section-title.tech-animated::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: 3px;
+    animation: expand-line 3s infinite ease-in-out;
+}
+
+/* Fixar z-index para garantir que elementos decorativos fiquem atrás do conteúdo */
+.tech-particles, 
+.tech-decorative-particle, 
+.tech-decorative-line {
+    z-index: -1;
+    pointer-events: none;
+    contain: strict;
+}

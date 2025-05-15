@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FStech - Blog de Inteligência Artificial</title>
+    <link rel="stylesheet" href="css/tech-styles.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/tech-effects.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Blog de notícias sobre Inteligência Artificial - FStech">
+    
+    <style>
+      /* Estilos específicos para o blog */
+      .tech-blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-xl);
+        margin-top: var(--spacing-2xl);
+      }
+      
+      .tech-blog-card {
+        background: rgba(15, 15, 15, 0.6);
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tech-blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
+        border-color: rgba(20, 107, 255, 0.2);
+      }
+      
+      .tech-blog-card .content {
+        padding: var(--spacing-xl);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .tech-blog-card .date {
+        color: var(--accent-400);
+        font-size: 0.875rem;
+        margin-bottom: var(--spacing-sm);
+      }
+      
+      .tech-blog-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+        font-weight: 600;
+      }
+      
+      .tech-blog-card p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: var(--spacing-lg);
+        font-size: 1rem;
+        line-height: 1.5;
+        flex-grow: 1;
+      }
+      
+      .tech-blog-card .source {
+        display: block;
+        color: var(--accent-500);
+        text-decoration: none;
+        font-size: 0.875rem;
+        margin-top: auto;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .tech-blog-card .source:hover {
+        color: var(--accent-cyan);
+      }
+      
+      .tech-blog-header {
+        margin-bottom: var(--spacing-2xl);
+      }
+      
+      .tech-blog-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-md);
+        font-weight: 700;
+      }
+      
+      .tech-blog-header p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.125rem;
+        line-height: 1.5;
+        max-width: 800px;
+      }
+      
+      .tech-last-update {
+        text-align: right;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: var(--spacing-lg);
+        font-style: italic;
+      }
+      
+      @media (max-width: 768px) {
+        .tech-blog-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body class="tech-dark-theme">
+    <!-- Header -->
+    <header class="tech-header">
+        <a href="index.html">
+            <img src="images/logo.png" alt="FStech" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+                <li><a href="clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+        <button class="mobile-menu-toggle">☰</button>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="servicos.html">Serviços</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="tech-hero" style="min-height: 40vh; padding: 8rem 2rem 4rem;">
+        <div class="tech-overlay"></div>
+        <div class="tech-dot-pattern"></div>
+        <div class="hero-glow"></div>
+        
+        <div class="tech-hero-content">
+            <h1 class="tech-hero-title">Blog <span class="tech-text-gradient">FStech</span></h1>
+            <p class="tech-hero-subtitle">Notícias diárias sobre o mundo da Inteligência Artificial</p>
+        </div>
+    </section>
+    
+    <!-- Blog Section -->
+    <section class="tech-section">
+        <div class="tech-container">
+            <div class="tech-blog-header">
+                <h2>Últimas Notícias de IA</h2>
+                <p>Mantemos você atualizado com as principais notícias da indústria de Inteligência Artificial. Nosso blog é atualizado diariamente com conteúdo relevante e conciso.</p>
+            </div>
+            
+            <div class="tech-blog-grid">
+                <!-- Notícia 1 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">15 de maio de 2025</span>
+                        <h3>AlphaEvolve do Google descobre avanços matemáticos</h3>
+                        <p>O Google lançou o AlphaEvolve, um agente de codificação que utiliza o Gemini e estratégias evolutivas para criar algoritmos para desafios científicos e computacionais. O sistema já fez várias descobertas matemáticas, incluindo a primeira melhoria no algoritmo de Strassen desde 1969.</p>
+                        <a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf" class="source" target="_blank">Leia mais em Google DeepMind →</a>
+                    </div>
+                </article>
+                
+                <!-- Notícia 2 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">15 de maio de 2025</span>
+                        <h3>Anthropic se prepara para lançar novos modelos Sonnet e Opus</h3>
+                        <p>A Anthropic está se preparando para lançar versões avançadas dos modelos Claude Sonnet e Opus nas "próximas semanas", apresentando pensamento híbrido e capacidades expandidas de uso de ferramentas. Os modelos poderão alternar entre raciocínio e uso de ferramentas, além de se autocorrigir.</p>
+                        <a href="https://www.theinformation.com/articles/anthropics-upcoming-models-will-think-think" class="source" target="_blank">Leia mais em The Information →</a>
+                    </div>
+                </article>
+                
+                <!-- Notícia 3 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">15 de maio de 2025</span>
+                        <h3>OpenAI lança novo painel de Avaliações de Segurança</h3>
+                        <p>A OpenAI lançou um novo Hub de Avaliações de Segurança que exibirá publicamente e regularmente os resultados de testes para seus modelos de IA, mostrando como eles se comportam em métricas como geração de conteúdo prejudicial, taxas de alucinação e tentativas de jailbreak.</p>
+                        <a href="https://openai.com/safety/evaluations-hub/" class="source" target="_blank">Leia mais em OpenAI Safety →</a>
+                    </div>
+                </article>
+                
+                <!-- Notícia 4 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">14 de maio de 2025</span>
+                        <h3>NVIDIA estabelece acordos para chips de IA no Oriente Médio</h3>
+                        <p>A NVIDIA está garantindo acordos de chips de IA no Oriente Médio, fornecendo tecnologia para a Humain da Arábia Saudita e para os Emirados Árabes Unidos após reuniões com a administração Trump e outros líderes regionais.</p>
+                        <a href="https://www.bloomberg.com/news/articles/2025-05-13/nvidia-amd-humain-all-the-ai-related-deals-from-trump-s-mideast-trip" class="source" target="_blank">Leia mais em Bloomberg →</a>
+                    </div>
+                </article>
+                
+                <!-- Notícia 5 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">14 de maio de 2025</span>
+                        <h3>Nous Research lança Psyche, infraestrutura de IA descentralizada</h3>
+                        <p>A Nous Research lançou o Psyche, uma nova infraestrutura de IA aberta e descentralizada que permite que indivíduos unam recursos computacionais para treinar modelos sem custos massivos de investimento.</p>
+                        <a href="https://nousresearch.com/nous-psyche/" class="source" target="_blank">Leia mais em Nous Research →</a>
+                    </div>
+                </article>
+                
+                <!-- Notícia 6 -->
+                <article class="tech-blog-card">
+                    <div class="content">
+                        <span class="date">14 de maio de 2025</span>
+                        <h3>CEO da Klarna revela redução de 40% da força de trabalho devido à IA</h3>
+                        <p>Sebastian Siemiatkowski, CEO da Klarna, revelou que a gigante de fintech cortou 40% de sua força de trabalho devido à IA, mas agora planeja contratar agentes humanos após uma queda na qualidade do trabalho.</p>
+                        <a href="https://www.cnbc.com/2025/05/14/klarna-ceo-says-ai-helped-company-shrink-workforce-by-40percent.html" class="source" target="_blank">Leia mais em CNBC →</a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="tech-blog-header" style="margin-top: 4rem;">
+                <h2>Ferramentas de IA em Alta</h2>
+                <p>Confira as ferramentas de IA mais relevantes e recentes para manter-se atualizado sobre as inovações práticas no mundo da Inteligência Artificial.</p>
+            </div>
+            
+            <div class="tech-tools-section">
+                <style>
+                    .tech-tools-section {
+                        margin-top: 2rem;
+                    }
+                    
+                    .tech-tools-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                        gap: var(--spacing-xl);
+                        margin-bottom: 2rem;
+                    }
+                    
+                    .tech-tool-item {
+                        background: rgba(15, 15, 15, 0.6);
+                        backdrop-filter: blur(10px);
+                        border-radius: var(--radius-md);
+                        padding: var(--spacing-lg);
+                        border: 1px solid rgba(255, 255, 255, 0.03);
+                        transition: all 0.3s ease;
+                    }
+                    
+                    .tech-tool-item:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 8px 16px -5px rgba(20, 107, 255, 0.3);
+                        border-color: rgba(20, 107, 255, 0.2);
+                    }
+                    
+                    .tech-tool-item h4 {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                        color: white;
+                    }
+                    
+                    .tech-tool-item p {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-size: 0.95rem;
+                        margin-bottom: 1rem;
+                        line-height: 1.4;
+                    }
+                    
+                    .tech-tool-link {
+                        color: var(--accent-400);
+                        text-decoration: none;
+                        font-size: 0.875rem;
+                        display: inline-flex;
+                        align-items: center;
+                        transition: color 0.3s ease;
+                    }
+                    
+                    .tech-tool-link:hover {
+                        color: var(--accent-cyan);
+                    }
+                    
+                    .tech-tool-link:after {
+                        content: "→";
+                        margin-left: 0.25rem;
+                    }
+                    
+                    .tech-quick-news {
+                        margin-top: 3rem;
+                        background: rgba(15, 15, 15, 0.6);
+                        backdrop-filter: blur(10px);
+                        border-radius: var(--radius-lg);
+                        padding: var(--spacing-xl);
+                        border: 1px solid rgba(255, 255, 255, 0.03);
+                    }
+                    
+                    .tech-quick-news h3 {
+                        font-size: 1.75rem;
+                        margin-bottom: var(--spacing-lg);
+                        font-weight: 600;
+                    }
+                    
+                    .tech-quick-news-list {
+                        list-style: none;
+                        padding: 0;
+                    }
+                    
+                    .tech-quick-news-list li {
+                        color: rgba(255, 255, 255, 0.8);
+                        margin-bottom: var(--spacing-md);
+                        padding-left: 1.5rem;
+                        position: relative;
+                        font-size: 1rem;
+                        line-height: 1.5;
+                    }
+                    
+                    .tech-quick-news-list li:before {
+                        content: "•";
+                        color: var(--accent-400);
+                        font-size: 1.25rem;
+                        position: absolute;
+                        left: 0;
+                        top: -2px;
+                    }
+                    
+                    @media (max-width: 768px) {
+                        .tech-tools-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                </style>
+                
+                <div class="tech-tools-grid">
+                    <!-- Ferramenta 1 -->
+                    <div class="tech-tool-item">
+                        <h4>Gemini Advanced</h4>
+                        <p>Conecte o assistente avançado do Google a repositórios GitHub para receber análises e sugestões de código inteligentes.</p>
+                        <a href="https://gemini.google.com/" class="tech-tool-link" target="_blank">Acessar ferramenta</a>
+                    </div>
+                    
+                    <!-- Ferramenta 2 -->
+                    <div class="tech-tool-item">
+                        <h4>GPT-4.1</h4>
+                        <p>Modelo avançado de codificação da OpenAI, agora disponível no ChatGPT para todos os usuários com capacidades ampliadas para desenvolvimento de software.</p>
+                        <a href="https://chat.openai.com/" class="tech-tool-link" target="_blank">Acessar ferramenta</a>
+                    </div>
+                    
+                    <!-- Ferramenta 3 -->
+                    <div class="tech-tool-item">
+                        <h4>TikTok AI Alive</h4>
+                        <p>Transforme imagens estáticas em vídeos dinâmicos para o TikTok Stories utilizando inteligência artificial generativa.</p>
+                        <a href="https://www.tiktok.com/" class="tech-tool-link" target="_blank">Acessar ferramenta</a>
+                    </div>
+                    
+                    <!-- Ferramenta 4 -->
+                    <div class="tech-tool-item">
+                        <h4>CodeRabbit</h4>
+                        <p>Revisões de código com IA diretamente nos editores Cursor, Windsurf e VSCode, melhorando eficiência e qualidade de código.</p>
+                        <a href="https://coderabbit.ai/" class="tech-tool-link" target="_blank">Acessar ferramenta</a>
+                    </div>
+                </div>
+                
+                <div class="tech-quick-news">
+                    <h3>Outras Notícias Importantes</h3>
+                    <ul class="tech-quick-news-list">
+                        <li>A OpenAI adicionou os modelos GPT-4.1 e GPT-4.1-mini focados em codificação ao ChatGPT, agora disponíveis para usuários gratuitos e pagos.</li>
+                        <li>A Stability AI disponibilizou como código aberto o Stable Audio Open Small, um modelo de texto para áudio capaz de gerar amostras de música, podendo rodar em dispositivos sem internet.</li>
+                        <li>A Perplexity e o PayPal anunciaram uma nova parceria, permitindo aos usuários pagar com PayPal e Venmo ao fazer compras na plataforma de IA.</li>
+                        <li>A Meta lançou pesquisas científicas, incluindo o conjunto de dados Open Molecules 2025, o Universal Model for Atoms e um estudo sobre desenvolvimento de linguagem e treinamento de IA.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="tech-last-update">Última atualização: 15 de maio de 2025</p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="tech-cta-section">
+        <div class="tech-grid-bg"></div>
+        <div class="tech-container">
+            <div class="tech-cta-content">
+                <h2 class="tech-cta-title">Pronto para aplicar Inteligência Artificial no seu negócio?</h2>
+                <p class="tech-cta-text">Transforme sua empresa com nossas soluções personalizadas de automação e IA. Agende uma conversa com nossos especialistas e descubra como podemos ajudar.</p>
+                <a href="contato.html" class="tech-button tech-button-large">Fale com um Especialista</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="tech-footer">
+        <div class="tech-container">
+            <div class="tech-footer-content">
+                <div>
+                    <h3 class="tech-footer-title">FStech</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="index.html" class="tech-footer-link">Home</a></li>
+                        <li><a href="servicos.html" class="tech-footer-link">Serviços</a></li>
+                        <li><a href="clientes.html" class="tech-footer-link">Clientes</a></li>
+                        <li><a href="sobre.html" class="tech-footer-link">Sobre</a></li>
+                        <li><a href="blog.html" class="tech-footer-link">Blog</a></li>
+                        <li><a href="contato.html" class="tech-footer-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="tech-footer-title">Serviços</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="servicos.html#diagnostico" class="tech-footer-link">Diagnóstico</a></li>
+                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação de IA</a></li>
+                        <li><a href="servicos.html#suporte" class="tech-footer-link">Suporte</a></li>
+                        <li><a href="servicos.html#automacao" class="tech-footer-link">Automação de Processos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="tech-footer-title">Contato</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="mailto:contato@fstech.ai" class="tech-footer-link">contato@fstech.ai</a></li>
+                        <li><a href="tel:+5511999999999" class="tech-footer-link">+55 (11) 99999-9999</a></li>
+                        <li><a href="https://wa.me/5511999999999" class="tech-footer-link">WhatsApp</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="tech-footer-title">Legal</h3>
+                    <ul class="tech-footer-links">
+                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a></li>
+                        <li><a href="#" class="tech-footer-link">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-line"></div>
+            <p class="tech-copyright">© 2024 FStech. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
