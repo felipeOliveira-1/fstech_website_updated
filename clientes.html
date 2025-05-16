@@ -1,370 +1,413 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes - FStech</title>
     <link rel="stylesheet" href="css/tech-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Conheça os clientes da FStech, histórias reais de sucesso e depoimentos de empresas que transformaram sua relação com a tecnologia.">
+    <meta name="keywords"
+        content="clientes FStech, casos de sucesso, depoimentos, automação empresarial, chatbot com IA, empresas atendidas, tecnologia para negócios, fidelização com IA, empresas transformadas, soluções personalizadas, resultados com tecnologia">
+    <meta name="author" content="FStech">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Clientes da FStech - Histórias de Sucesso em Tecnologia" />
+    <meta property="og:description"
+        content="Veja como empresas como Silia, AgroRS e outras estão usando soluções com IA para otimizar processos, reduzir custos e melhorar resultados com a FStech." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fstech.com.br/clientes.html" />
+    <meta property="og:image" content="https://www.fstech.com.br/images/fstech.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clientes da FStech - Histórias de Sucesso em Tecnologia" />
+    <meta name="twitter:description"
+        content="Depoimentos, cases e resultados reais de empresas que confiam na FStech para crescer com tecnologia simplificada e inteligente." />
+    <meta name="twitter:image" content="https://www.fstech.com.br/images/fstech.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.fstech.com.br/clientes.html" />
+
     <style>
-/* Estilos do Carrossel - Clientes */
+        /* Estilos do Carrossel - Clientes */
 
-.tech-carousel-container {
-    width: 100vw;
-    margin: 3rem 0;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    overflow: hidden;
-    background: rgba(15, 15, 15, 0.4);
-    border-radius: 0;
-    padding: 2rem 0;
-    position: relative;
-}
-
-.tech-carousel-container::before,
-.tech-carousel-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.tech-carousel-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
-}
-
-.tech-carousel-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
-}
-
-.tech-carousel-track {
-    display: flex;
-    animation: scroll 20s linear infinite;
-    width: max-content;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-190px * 7 + 3.5rem)); /* Ajustado para o novo tamanho e margens */
-    }
-}
-
-@media (max-width: 768px) {
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        .tech-carousel-container {
+            width: 100vw;
+            margin: 3rem 0;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            overflow: hidden;
+            background: rgba(15, 15, 15, 0.4);
+            border-radius: 0;
+            padding: 2rem 0;
+            position: relative;
         }
-        100% {
-            transform: translateX(calc(-180px * 7 + 5.25rem)); /* Ajustado para o novo tamanho em mobile */
+
+        .tech-carousel-container::before,
+        .tech-carousel-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
         }
-    }
-}
 
-.tech-logo {
-    min-width: 190px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    transition: all 0.3s ease;
-    margin-right: -0.5rem; /* Espaço negativo para aproximar os logos */
-}
-
-.tech-logo:hover {
-    transform: scale(1.15);
-}
-
-.tech-logo img {
-    max-width: 100%;
-    max-height: 110px; /* Aumentando um pouco o tamanho para desktop */
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-    .tech-logo {
-        min-width: 160px;
-        height: 140px; /* Mantendo o tamanho original do container */
-        padding: 0.2rem; /* Reduzindo padding para maximizar espaço para a imagem */
-        margin-right: -0.75rem; /* Espaço negativo para aproximar os logos */
-    }
-    
-    .tech-logo img {
-        max-height: 170px; /* Logos MUITO maiores, ultrapassando o container */
-        max-width: 170px; /* Garantindo que os logos fiquem maiores */
-        transform: scale(1.2); /* Forçando os logos a ficarem ainda maiores */
-    }
-    
-    .tech-carousel-track {
-        animation: scroll 15s linear infinite;
-    }
-}
-
-.tech-logo:hover img {
-    /* Mantendo as cores originais sem filtros, apenas com aumento suave de brilho no hover */
-    filter: brightness(1.2);
-}
-
-.tech-clients-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.tech-clients-intro h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.tech-clients-intro p {
-    max-width: 800px;
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-}
-
-/* Estilos para Caso de Estudo */
-.tech-case-study {
-    background: rgba(15, 15, 15, 0.6);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    margin-bottom: 3rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tech-case-study:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
-    border-color: rgba(20, 107, 255, 0.2);
-}
-
-.tech-case-study-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.tech-case-study-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    margin-right: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tech-case-study-logo img {
-    max-width: 70%;
-    max-height: 70%;
-}
-
-.tech-case-study-title h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.tech-case-study-title p {
-    color: var(--accent-400);
-    font-size: 0.9rem;
-}
-
-.tech-case-study-description {
-    margin-bottom: 1.5rem;
-}
-
-.tech-case-study-description p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.tech-case-features {
-    margin: 2rem 0;
-}
-
-.tech-case-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.tech-result-item {
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(20, 107, 255, 0.1);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(20, 107, 255, 0.2);
-}
-
-.tech-result-number {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(90deg, var(--accent-500), var(--accent-cyan));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.tech-result-label {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Depoimentos */
-.tech-testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.tech-testimonial-card {
-    background: rgba(15, 15, 15, 0.6);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tech-testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
-    border-color: rgba(20, 107, 255, 0.2);
-}
-
-.tech-testimonial-content {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
-}
-
-.tech-testimonial-content::before {
-    content: '"';
-    font-size: 4rem;
-    color: var(--accent-500);
-    position: absolute;
-    top: -2rem;
-    left: -1rem;
-    opacity: 0.2;
-}
-
-.tech-testimonial-content p {
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    font-style: italic;
-}
-
-.tech-testimonial-author {
-    display: flex;
-    align-items: center;
-}
-
-.tech-author-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 1rem;
-    border: 2px solid var(--accent-500);
-}
-
-.tech-author-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.tech-author-info h4 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-    color: white;
-}
-
-.tech-author-info p {
-    font-size: 0.85rem;
-    color: var(--accent-400);
-}
-
-.tech-section-container {
-    margin: 4rem 0 2rem;
-    text-align: center;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .tech-testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .tech-case-results {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .tech-carousel-container {
-        padding: 1.5rem 0;
-    }
-    
-    .tech-logo {
-        width: 120px;
-        padding: 1rem;
-    }
-    
-    .tech-logo img {
-        max-height: 50px;
-    }
-    
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        .tech-carousel-container::before {
+            left: 0;
+            background: linear-gradient(to right, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
         }
-        100% {
-            transform: translateX(calc(-120px * 7));
-        }
-    }
-}
 
-@media (max-width: 480px) {
-    .tech-case-results {
-        grid-template-columns: 1fr;
-    }
-    
-    .tech-logo {
-        width: 100px;
-        padding: 0.75rem;
-    }
-    
-    .tech-logo img {
-        max-height: 40px;
-    }
-    
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        .tech-carousel-container::after {
+            right: 0;
+            background: linear-gradient(to left, rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0));
         }
-        100% {
-            transform: translateX(calc(-100px * 7));
+
+        .tech-carousel-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: max-content;
         }
-    }
-}
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-190px * 7 + 3.5rem));
+                /* Ajustado para o novo tamanho e margens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-180px * 7 + 5.25rem));
+                    /* Ajustado para o novo tamanho em mobile */
+                }
+            }
+        }
+
+        .tech-logo {
+            min-width: 190px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            margin-right: -0.5rem;
+            /* Espaço negativo para aproximar os logos */
+        }
+
+        .tech-logo:hover {
+            transform: scale(1.15);
+        }
+
+        .tech-logo img {
+            max-width: 100%;
+            max-height: 110px;
+            /* Aumentando um pouco o tamanho para desktop */
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .tech-logo {
+                min-width: 160px;
+                height: 140px;
+                /* Mantendo o tamanho original do container */
+                padding: 0.2rem;
+                /* Reduzindo padding para maximizar espaço para a imagem */
+                margin-right: -0.75rem;
+                /* Espaço negativo para aproximar os logos */
+            }
+
+            .tech-logo img {
+                max-height: 170px;
+                /* Logos MUITO maiores, ultrapassando o container */
+                max-width: 170px;
+                /* Garantindo que os logos fiquem maiores */
+                transform: scale(1.2);
+                /* Forçando os logos a ficarem ainda maiores */
+            }
+
+            .tech-carousel-track {
+                animation: scroll 15s linear infinite;
+            }
+        }
+
+        .tech-logo:hover img {
+            /* Mantendo as cores originais sem filtros, apenas com aumento suave de brilho no hover */
+            filter: brightness(1.2);
+        }
+
+        .tech-clients-intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tech-clients-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-clients-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Estilos para Caso de Estudo */
+        .tech-case-study {
+            background: rgba(15, 15, 15, 0.6);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-case-study:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
+            border-color: rgba(20, 107, 255, 0.2);
+        }
+
+        .tech-case-study-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-case-study-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-case-study-logo img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+
+        .tech-case-study-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .tech-case-study-title p {
+            color: var(--accent-400);
+            font-size: 0.9rem;
+        }
+
+        .tech-case-study-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-case-study-description p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-case-features {
+            margin: 2rem 0;
+        }
+
+        .tech-case-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-result-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(20, 107, 255, 0.1);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(20, 107, 255, 0.2);
+        }
+
+        .tech-result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--accent-500), var(--accent-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tech-result-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Depoimentos */
+        .tech-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-testimonial-card {
+            background: rgba(15, 15, 15, 0.6);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px -5px rgba(20, 107, 255, 0.3);
+            border-color: rgba(20, 107, 255, 0.2);
+        }
+
+        .tech-testimonial-content {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .tech-testimonial-content::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-500);
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            opacity: 0.2;
+        }
+
+        .tech-testimonial-content p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .tech-testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .tech-author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 2px solid var(--accent-500);
+        }
+
+        .tech-author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tech-author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+
+        .tech-author-info p {
+            font-size: 0.85rem;
+            color: var(--accent-400);
+        }
+
+        .tech-section-container {
+            margin: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .tech-testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-case-results {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .tech-carousel-container {
+                padding: 1.5rem 0;
+            }
+
+            .tech-logo {
+                width: 120px;
+                padding: 1rem;
+            }
+
+            .tech-logo img {
+                max-height: 50px;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-120px * 7));
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-case-results {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-logo {
+                width: 100px;
+                padding: 0.75rem;
+            }
+
+            .tech-logo img {
+                max-height: 40px;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-100px * 7));
+                }
+            }
+        }
     </style>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Conheça os clientes da FStech, casos de sucesso e depoimentos de quem já simplificou sua tecnologia conosco.">
+    <meta name="description"
+        content="Conheça os clientes da FStech, casos de sucesso e depoimentos de quem já simplificou sua tecnologia conosco.">
 </head>
+
 <body class="tech-dark-theme">
     <!-- Header -->
     <header class="tech-header">
@@ -411,8 +454,9 @@
         <!-- Empresas Parceiras -->
         <div class="tech-clients-intro">
             <h3>Empresas que <span class="tech-text-gradient">confiam em nós</span></h3>
-            <p>Trabalhamos com empreendedores individuais, pequenas empresas e profissionais de diversas áreas que buscam simplificar sua relação com a tecnologia e impulsionar seus negócios.</p>
-        
+            <p>Trabalhamos com empreendedores individuais, pequenas empresas e profissionais de diversas áreas que
+                buscam simplificar sua relação com a tecnologia e impulsionar seus negócios.</p>
+
             <!-- Carrossel de Logos -->
             <div class="tech-carousel-container">
                 <div class="tech-carousel-track">
@@ -504,13 +548,14 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Título da seção de casos de sucesso -->
         <div class="tech-section-container">
             <h2 class="tech-section-title">Casos de <span class="tech-text-gradient">Sucesso</span></h2>
-            <p class="tech-text-lg">Conheça histórias reais de empresas que transformaram sua relação com a tecnologia</p>
+            <p class="tech-text-lg">Conheça histórias reais de empresas que transformaram sua relação com a tecnologia
+            </p>
         </div>
-        
+
         <!-- Caso de Sucesso 1 -->
         <div class="tech-case-study">
             <div class="tech-case-study-header">
@@ -522,12 +567,15 @@
                     <p>Consultoria Empresarial</p>
                 </div>
             </div>
-            
+
             <div class="tech-case-study-description">
-                <p>A Silia, enfrentava desafios para gerenciar seus processos internos e comunicação com clientes. Implementamos uma solução integrada com ferramentas de IA que automatizou o agendamento de reuniões, follow-up com clientes e geração de relatórios.</p>
-                <p>Com nossa ajuda, a equipe da Silia conseguiu reduzir o tempo gasto em tarefas administrativas e focar no que realmente importa: o atendimento personalizado aos seus clientes.</p>
+                <p>A Silia, enfrentava desafios para gerenciar seus processos internos e comunicação com clientes.
+                    Implementamos uma solução integrada com ferramentas de IA que automatizou o agendamento de reuniões,
+                    follow-up com clientes e geração de relatórios.</p>
+                <p>Com nossa ajuda, a equipe da Silia conseguiu reduzir o tempo gasto em tarefas administrativas e focar
+                    no que realmente importa: o atendimento personalizado aos seus clientes.</p>
             </div>
-            
+
             <div class="tech-case-features">
                 <div class="tech-feature-item">
                     <div class="tech-feature-icon"><i class="fas fa-check"></i></div>
@@ -542,7 +590,7 @@
                     <div class="tech-feature-text">Otimização da comunicação com clientes</div>
                 </div>
             </div>
-            
+
             <div class="tech-case-results">
                 <div class="tech-result-item">
                     <div class="tech-result-number">40%</div>
@@ -558,7 +606,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Caso de Sucesso 2 -->
         <div class="tech-case-study">
             <div class="tech-case-study-header">
@@ -570,12 +618,21 @@
                     <p>Agronegócio</p>
                 </div>
             </div>
-            
+
             <div class="tech-case-study-description">
-                <p>A AgroRS, uma referência no setor de agronegócio, identificou a necessidade de oferecer aos seus clientes um canal de atendimento rápido e inteligente para consultar cotações, previsões de preços e notícias do mercado em tempo real. Para isso, desenvolvemos um chatbot com IA totalmente integrado aos sistemas de controle interno da AgroRS, ao nosso modelo de previsão de commodities e a um feed de notícias setorial dinâmico. Assim, o usuário passa a receber alertas personalizados, relatórios de tendência e respostas instantâneas a qualquer hora, diretamente pelo chat.</p>
-                <p>O resultado foi uma redução de 40% no volume de ligações ao SAC, aumento de 55% no engajamento dos clientes com nossas ferramentas digitais e ganho médio de 20 minutos por usuário em pesquisa de informações de mercado. Além disso, o índice de satisfação (NPS) subiu de 68% para 92%, comprovando o poder de uma experiência conversacional otimizada por IA na fidelização e no sucesso dos nossos parceiros.</p>
+                <p>A AgroRS, uma referência no setor de agronegócio, identificou a necessidade de oferecer aos seus
+                    clientes um canal de atendimento rápido e inteligente para consultar cotações, previsões de preços e
+                    notícias do mercado em tempo real. Para isso, desenvolvemos um chatbot com IA totalmente integrado
+                    aos sistemas de controle interno da AgroRS, ao nosso modelo de previsão de commodities e a um feed
+                    de notícias setorial dinâmico. Assim, o usuário passa a receber alertas personalizados, relatórios
+                    de tendência e respostas instantâneas a qualquer hora, diretamente pelo chat.</p>
+                <p>O resultado foi uma redução de 40% no volume de ligações ao SAC, aumento de 55% no engajamento dos
+                    clientes com nossas ferramentas digitais e ganho médio de 20 minutos por usuário em pesquisa de
+                    informações de mercado. Além disso, o índice de satisfação (NPS) subiu de 68% para 92%, comprovando
+                    o poder de uma experiência conversacional otimizada por IA na fidelização e no sucesso dos nossos
+                    parceiros.</p>
             </div>
-            
+
             <div class="tech-case-features">
                 <div class="tech-feature-item">
                     <div class="tech-feature-icon"><i class="fas fa-check"></i></div>
@@ -598,7 +655,7 @@
                     <div class="tech-feature-text">Alertas personalizados e relatórios de tendências</div>
                 </div>
             </div>
-            
+
             <div class="tech-case-results">
                 <div class="tech-result-item">
                     <div class="tech-result-number">40%</div>
@@ -614,18 +671,20 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Título da seção de depoimentos -->
         <div class="tech-section-container">
             <h2 class="tech-section-title">O que nossos <span class="tech-text-gradient">clientes dizem</span></h2>
             <p class="tech-text-lg">Depoimentos de quem já transformou sua relação com a tecnologia</p>
         </div>
-        
+
         <!-- Depoimentos -->
         <div class="tech-testimonials-grid">
             <div class="tech-testimonial-card">
                 <div class="tech-testimonial-content">
-                    <p>"A FStech transformou completamente a maneira como lidamos com tecnologia em nossa empresa. Antes, tínhamos medo de implementar novas ferramentas. Agora, nos sentimos confiantes para explorar soluções que realmente impulsionam nosso negócio."</p>
+                    <p>"A FStech transformou completamente a maneira como lidamos com tecnologia em nossa empresa.
+                        Antes, tínhamos medo de implementar novas ferramentas. Agora, nos sentimos confiantes para
+                        explorar soluções que realmente impulsionam nosso negócio."</p>
                 </div>
                 <div class="tech-testimonial-author">
                     <!--<div class="tech-author-avatar">
@@ -637,10 +696,13 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="tech-testimonial-card">
                 <div class="tech-testimonial-content">
-                    <p>"A equipe da FStech tem sido essencial para a evolução da nossa plataforma. Soluções como integração com PagSeguro e melhorias de performance tornaram o sistema mais seguro e eficiente. O que mais me impressiona é a capacidade deles de entender nossas necessidades e propor soluções práticas e escaláveis."</p>
+                    <p>"A equipe da FStech tem sido essencial para a evolução da nossa plataforma. Soluções como
+                        integração com PagSeguro e melhorias de performance tornaram o sistema mais seguro e eficiente.
+                        O que mais me impressiona é a capacidade deles de entender nossas necessidades e propor soluções
+                        práticas e escaláveis."</p>
                 </div>
                 <div class="tech-testimonial-author">
                     <!--<div class="tech-author-avatar">
@@ -652,10 +714,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="tech-testimonial-card">
                 <div class="tech-testimonial-content">
-                    <p>"O que mais me impressionou na FStech foi a paciência e dedicação da equipe. Eles realmente se importam em garantir que entendemos cada etapa do processo, sem usar termos técnicos complicados."</p>
+                    <p>"O que mais me impressionou na FStech foi a paciência e dedicação da equipe. Eles realmente se
+                        importam em garantir que entendemos cada etapa do processo, sem usar termos técnicos
+                        complicados."</p>
                 </div>
                 <div class="tech-testimonial-author">
                     <!--<div class="tech-author-avatar">
@@ -674,7 +738,8 @@
     <section class="tech-cta-section">
         <div class="tech-cta-content">
             <h2 class="tech-cta-title">Seja o próximo <span class="tech-text-gradient">caso de sucesso</span></h2>
-            <p class="tech-cta-text">Descubra como podemos ajudar seu negócio a aproveitar todo o potencial da tecnologia de forma simples e eficiente.</p>
+            <p class="tech-cta-text">Descubra como podemos ajudar seu negócio a aproveitar todo o potencial da
+                tecnologia de forma simples e eficiente.</p>
             <a href="contato.html" class="tech-button tech-button-large pulse-glow">Agendar Consulta Grátis</a>
         </div>
         <div class="tech-line"></div>
@@ -696,7 +761,8 @@
                     <h3 class="tech-footer-title">Serviços</h3>
                     <ul class="tech-footer-links">
                         <li><a href="servicos.html#diagnostico" class="tech-footer-link">Sessões de Diagnóstico</a></li>
-                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação Passo a Passo</a></li>
+                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação Passo a
+                                Passo</a></li>
                         <li><a href="servicos.html#suporte" class="tech-footer-link">Suporte Contínuo</a></li>
                     </ul>
                 </div>
@@ -711,7 +777,8 @@
                     <h3 class="tech-footer-title">Legal</h3>
                     <ul class="tech-footer-links">
                         <li><a href="#" class="tech-footer-link">Termos de Uso</a></li>
-                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a></li>
+                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a>
+                        </li>
                         <li><a href="#" class="tech-footer-link">Cookies</a></li>
                     </ul>
                 </div>
@@ -724,9 +791,11 @@
     </footer>
 
     <script src="js/main.js"></script>
-    
+
     <!-- Chatbot Integration -->
     <script> window.chtlConfig = { chatbotId: "1849111777" } </script>
-    <script async data-id="1849111777" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <script async data-id="1849111777" id="chatling-embed-script" type="text/javascript"
+        src="https://chatling.ai/js/embed.js"></script>
 </body>
+
 </html>
