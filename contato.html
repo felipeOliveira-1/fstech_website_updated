@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato - FStech</title>
     <link rel="stylesheet" href="css/tech-styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Entre em contato com a FStech para simplificar sua tecnologia. Agende uma consulta gratuita ou envie uma mensagem.">
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Entre em contato com a FStech para simplificar sua tecnologia. Agende uma consulta gratuita, envie uma mensagem ou fale conosco por e-mail, telefone ou WhatsApp.">
+    <meta name="keywords"
+        content="contato FStech, agendar consulta, atendimento tecnológico, suporte técnico, consultoria gratuita, tecnologia para empresas, ajuda com IA, simplificação tecnológica, fale conosco FStech">
+    <meta name="author" content="FStech">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Entre em Contato com a FStech" />
+    <meta property="og:description"
+        content="Agende uma conversa com nossos especialistas ou envie uma mensagem. Vamos ajudar você a transformar sua relação com a tecnologia." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fstech.com.br/contato.html" />
+    <meta property="og:image" content="https://www.fstech.com.br/images/fstech.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Fale com a FStech - Agende sua Consulta" />
+    <meta name="twitter:description"
+        content="Simplifique sua tecnologia. Fale com a equipe da FStech por e-mail, telefone ou WhatsApp e receba atendimento personalizado." />
+    <meta name="twitter:image" content="https://www.fstech.com.br/images/fstech.png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.fstech.com.br/contato.html" />
+
 </head>
+
 <body class="tech-dark-theme">
     <!-- Header -->
     <header class="tech-header">
@@ -53,29 +80,30 @@
             <div class="tech-contact-container">
                 <div class="tech-contact-info">
                     <h3>Vamos conversar</h3>
-                    <p>Tem dúvidas sobre como podemos ajudar seu negócio? Entre em contato conosco por qualquer um dos canais abaixo ou preencha o formulário.</p>
-                    
+                    <p>Tem dúvidas sobre como podemos ajudar seu negócio? Entre em contato conosco por qualquer um dos
+                        canais abaixo ou preencha o formulário.</p>
+
                     <div class="tech-contact-method">
                         <h4>Email</h4>
                         <p><a href="mailto:contato@felipesilva.tech">contato@felipesilva.tech</a></p>
                     </div>
-                    
+
                     <div class="tech-contact-method">
                         <h4>Telefone</h4>
                         <p><a href="tel:+5511972726492">+55 (11) 97272-6492</a></p>
                     </div>
-                    
+
                     <div class="tech-contact-method">
                         <h4>Endereço</h4>
                         <p>São Paulo, SP - Brasil</p>
                         <p>Atendemos remotamente em todo o Brasil</p>
                     </div>
-                    
+
                     <div class="tech-contact-method">
                         <h4>Horário de Atendimento</h4>
                         <p>Segunda a Sexta: 9h às 18h</p>
                     </div>
-                    
+
                     <!--<div class="social-links">
                         <a href="#" aria-label="WhatsApp">W</a>
                         <a href="#" aria-label="LinkedIn">L</a>
@@ -83,7 +111,7 @@
                         <a href="#" aria-label="GitHub">G</a>
                     </div>-->
                 </div>
-                
+
                 <div class="tech-contact-form">
                     <h3>Envie uma mensagem</h3>
                     <form action="enviar.php" method="POST">
@@ -94,12 +122,12 @@
                             <label for="name">Nome</label>
                             <input type="text" id="name" name="name" required>
                         </div>
-                        
+
                         <div class="tech-form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" required>
                         </div>
-                        
+
                         <div class="tech-form-group">
                             <label for="subject">Assunto</label>
                             <select id="subject" name="subject">
@@ -109,12 +137,12 @@
                                 <option value="support">Suporte</option>
                             </select>
                         </div>
-                        
+
                         <div class="tech-form-group">
                             <label for="message">Mensagem</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="tech-button">Enviar Mensagem</button>
                     </form>
                 </div>
@@ -127,21 +155,22 @@
         <div class="tech-container">
             <div class="tech-scheduling">
                 <h2>Agende uma <span class="tech-text-gradient">Consulta</span></h2>
-                <p>Escolha um horário conveniente para uma consulta gratuita de 30 minutos. Vamos discutir suas necessidades tecnológicas e como podemos ajudar seu negócio a crescer.</p>
-                
+                <p>Escolha um horário conveniente para uma consulta gratuita de 30 minutos. Vamos discutir suas
+                    necessidades tecnológicas e como podemos ajudar seu negócio a crescer.</p>
+
                 <!-- Cal inline embed code begins -->
                 <div class="tech-cal-wrapper" id="my-cal-inline"></div>
                 <script type="text/javascript">
-                  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-                Cal("init", "30min", {origin:"https://cal.com"});
+                    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                    Cal("init", "30min", { origin: "https://cal.com" });
 
-                  Cal.ns["30min"]("inline", {
-                    elementOrSelector:"#my-cal-inline",
-                    config: {"layout":"month_view"},
-                    calLink: "fstech-digital/30min",
-                  });
+                    Cal.ns["30min"]("inline", {
+                        elementOrSelector: "#my-cal-inline",
+                        config: { "layout": "month_view" },
+                        calLink: "fstech-digital/30min",
+                    });
 
-                  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                    Cal.ns["30min"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
                 </script>
                 <!-- Cal inline embed code ends -->
             </div>
@@ -164,7 +193,8 @@
                     <h3 class="tech-footer-title">Serviços</h3>
                     <ul class="tech-footer-links">
                         <li><a href="servicos.html#diagnostico" class="tech-footer-link">Sessões de Diagnóstico</a></li>
-                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação Passo a Passo</a></li>
+                        <li><a href="servicos.html#implementacao" class="tech-footer-link">Implementação Passo a
+                                Passo</a></li>
                         <li><a href="servicos.html#suporte" class="tech-footer-link">Suporte Contínuo</a></li>
                     </ul>
                 </div>
@@ -179,7 +209,8 @@
                     <h3 class="tech-footer-title">Legal</h3>
                     <ul class="tech-footer-links">
                         <li><a href="#" class="tech-footer-link">Termos de Uso</a></li>
-                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a></li>
+                        <li><a href="politica-de-privacidade.html" class="tech-footer-link">Política de Privacidade</a>
+                        </li>
                         <li><a href="#" class="tech-footer-link">Cookies</a></li>
                     </ul>
                 </div>
@@ -191,9 +222,11 @@
     </footer>
 
     <script src="js/main.js"></script>
-    
+
     <!-- Chatbot Integration -->
     <script> window.chtlConfig = { chatbotId: "1849111777" } </script>
-    <script async data-id="1849111777" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+    <script async data-id="1849111777" id="chatling-embed-script" type="text/javascript"
+        src="https://chatling.ai/js/embed.js"></script>
 </body>
+
 </html>
